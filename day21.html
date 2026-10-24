@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.text{
+    display: flex;
+    justify-content: center;
+}
+#count{
+    display: flex;
+    justify-content: center;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+#minus{
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+#reset{
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+#plus{
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+#count{
+    color: red;
+}
+
+
+</style>
+        
+
+<body>
+    
+    <h1 class="text">counter</h1>
+    <h2 id="count">0</h2>
+    <div class="head">
+    <button onclick="decrease()" id="minus">-</button>
+    <button onclick="reset()"  id="reset">reset</button>
+    <button onclick="increase()" id="plus">+</button>
+
+</div>
+</body>
+<script>
+let count = 0;
+let countText = document.getElementById("count")
+let minus = document. getElementById("minus")
+let resetBtn =  document.getElementById("reset")
+let plus = document.getElementById("plus")
+
+
+function increase(){
+    // count++;
+    count = count + 1;
+    console.log(count);
+    countText.innerText = count
+
+
+}
+function decrease(){
+count = count - 1; 
+console.log(count);
+ countText.innerText = count
+
+}
+function reset(){
+    console.log(count);
+    count = 0;
+    countText.innerText = count
+
+}
+
+
+</script>
+</html>

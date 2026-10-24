@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="color">
+    <h1 id="head">hello</h1>
+    <!-- <button id="btn">change to welcome </button> -->
+     
+    <p class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque a ex officia est dolorum asperiores nihil dolores, commodi voluptatibus praesentium quaerat ducimus eius repellendus ipsa optio, excepturi aspernatur laudantium assumenda!</p>
+    <p class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque a ex officia est dolorum asperiores nihil dolores, commodi voluptatibus praesentium quaerat ducimus eius repellendus ipsa optio, excepturi aspernatur laudantium assumenda!</p>
+
+    <button onclick = "change()" id="btn">change to welcome </button> <br>
+    <button>clik me</button>
+    
+
+  
+
+    <ul id="fruit">
+
+    </ul>
+</div>
+
+</body>
+<script>
+  let headText = document.getElementById("head") 
+  console.log("h1",headText.innerText);
+  let btn = document.getElementById("btn")
+  console.log("btn", btn.innerText);
+let box = document.getElementsByClassName("box")
+console.log("box",box[0].innerText);
+
+let p = document.getElementsByClassName("p")
+console.log("paragraph",p);
+
+console.log(document.querySelector("#head"));
+console.log(document.querySelector(".box"));
+console.log(document.querySelectorAll(".box"));
+let title = document.querySelector(".title")
+console.log("title",title );
+title.innerHTML = "<h1>new content</h1>"
+
+let list  = document.querySelector("#fruit")
+let child = document.createElement("li")
+child.innerText = "MANGO";
+list.appendChild(child)
+
+console.log("child",child);
+
+headText.style.color = "red";
+
+function changecolor(){
+  headText.style.color = "blue";
+  headText.innerText = headText.innerText + "prachi"  
+}
+let colorText = document.querySelector(".color")
+colorText.style.background = "yellow";
+
+let btnText = document.querySelector("#btn")
+btnText.style.fontSize = "20px";
+
+let boxText = document.querySelector(".box")
+boxText.style.textAlign = "center";
+boxText.style.border = "2px solid black"
+
+function change(){
+  console.log("Button Clicked");
+  headText.style.color = "blue"
+  headText.style.background = "pink"
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+   
+</script>
+</html>

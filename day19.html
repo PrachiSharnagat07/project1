@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form {
+            display: flex;
+            flex-direction: column;
+            max-width: 200px;
+            gap: 12px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form class="form">
+            <label for="">name</label>
+            <input type="text" name="username" id="username" placeholder="enter your name">
+            <input type="email" name="email" id="email" placeholder="enter your email">
+            <select name="select" id="course">
+                <label for="">choose:</label>
+                <option value="choose course">choose course</option>
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="js">js</option>
+
+
+            </select>
+            <input type="password" name="password" id="password" placeholder="enter your password">
+            <input type="submit" name="" id="submit">
+
+        </form>
+        <p id="message"></p>
+        <p id="output">name:|email:|course:|password:|</p>
+
+
+    </div>
+
+
+
+</body>
+<script>
+
+
+    // let colorText = document.querySelector("#color")
+    // let btnText = document.querySelector("#btn")
+
+    // function change(){
+    //   colorText.classList.toggle("color")
+    //   if (btnText.innerText === "change into dark them") {
+    //     btnText.innerText = "change into light mood "
+
+    //   } else {
+    //     btnText.innerText = "change into dark them"
+    //   }
+    // }
+
+    // let userNameInput = document.querySelector("#username");
+    // let headText  = document.querySelector("#head"); 
+    // let countText = document.querySelector("#count")
+    // let wordText = document.querySelector("#word")
+    // let colorText = document.querySelector("#color")
+
+
+
+    // function checkInputValue (){
+    //   console.log(userNameInput.value.length);
+    //   console.log(userNameInput.value);
+
+    //   countText.innerText = userNameInput.value.length
+    //   wordText.innerText = userNameInput.value
+
+    // //  headText.innerText = userNameInput.value.length 
+
+    // }
+
+    let userInput = document.getElementById("username")
+    let submitBtn = document.getElementById("submit")
+    let message = document.getElementById("message")
+    let email = document.getElementById("email")
+    let password = document.getElementById("password")
+    let course = document.getElementById("course")
+    let output = document.getElementById("output")
+
+
+
+
+
+    submitBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        console.log(course.value);
+
+
+
+
+        if (userInput.value.trim() === "") {
+            message.innerText = "name is invalid"
+            return;
+        }
+
+        if (email.value === "") {
+            message.innerText = "email is invalid"
+            return;
+        }
+        if (password.value.length < 7) {
+            message.innerText = "password is invalid"
+            return;
+        }
+        if (course.value === "") {
+            message.innerText = "course is invalid"
+            return;
+        }
+        else {
+            message.innerText = "submit success"
+
+            output.innerText = "name:" + userInput.value
+
+            output.innerText = "email" + email.value
+            output.innerText = "course" + course.value
+            output.innerText = "password" + password.value
+
+        }
+
+    })
+
+
+</script>
+
+</html>

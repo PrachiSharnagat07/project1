@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            list-style-type: none;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: darkgoldenrod;
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+    <h1 class="head">To Do List</h1>
+    <div class="title">
+        <input id="text" type="text" placeholder="enter your name">
+        <button onkeypress="addTask()" id="add">add</button>
+    
+    </div>
+    <ul id="list"></ul>
+    <button id="button"></button>
+</body>
+<script>
+    let textInput = document.getElementById("text")
+    let addBtn = document.getElementById("add")
+    let list = document.getElementById("list")
+    let delBtn = document.getElementById("button")
+
+
+    let task = [];
+    textInput.addEventListener("keypress", function(e) {
+        if(e.key !== "Enter")return;
+        list.innerHTML = "";
+        task.push(textInput.value)
+        task.forEach((item) => {
+
+            let li = document.createElement("li");
+            let del = document.createElement("button")
+
+    
+            li.innerText = item;
+            del.innerText = "delete"
+            del.addEventListener("click",()=>{
+                li.remove();
+                task = task.filter((task)=> task !== item)
+            })
+            
+            list.appendChild(li);
+            li.appendChild(del)
+             
+        })
+        
+        textInput.value = ""
+    })
+    
+</script>
+
+</html>
